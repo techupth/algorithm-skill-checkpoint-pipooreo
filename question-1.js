@@ -1,5 +1,17 @@
 function findStudentById(students, id) {
   // Your code here
+  //   let result = students.filter((student) => {
+  //     return student.id === id;
+  //   });
+
+  //   return result[0];
+  for (let student of students) {
+    // console.log(student);
+    if (student.id === id) {
+      return student;
+    }
+  }
+  return null;
 }
 
 // Test case
