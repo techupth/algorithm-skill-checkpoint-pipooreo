@@ -1,5 +1,20 @@
 function findProductPrice(products, name) {
   // Your code here
+  let left = 0;
+  let right = products.length - 1;
+  let result = -1;
+  while (left <= right) {
+    let min = Math.floor((right + left) / 2);
+    if (products[min].name < name) {
+      left = min + 1;
+    } else if (products[min].name > name) {
+      right = min - 1;
+    } else {
+      result = products[min].price;
+      break;
+    }
+  }
+  return result;
 }
 
 // Test case
